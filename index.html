@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Gallery</title>
+    <style>
+        /* General Styles */
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #c2a8a8;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: rgb(107, 97, 97);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        /* Navigation Buttons */
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0a0a0a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #0c0c0c;
+            transform: translateY(-3px);
+        }
+        /* Section Tiles */
+        
+        .tile {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: #fff;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Gallery Styles */
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        /* Hidden Sections */
+        
+        .hidden {
+            display: none;
+        }
+        /* About Me Section */
+        
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        /* Contact Section */
+        
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #contact ul li {
+            margin: 10px 0;
+            color: black;
+        }
+        
+        #contact ul li a {
+            color: #121313;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        #contact ul li a:hover {
+            color: #060707;
+        }
+        
+        #contact {
+            background-color: gray;
+            color: black;
+        }
+        
+        @media screen and (max-width: 600px) {
+            body {
+                scrollbar-width: none;
+                overflow-x: hidden;
+                margin: 0;
+            }
+            .gallery-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>MICKELLE PAGSAMBUGAN PHOTO GALLERY</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact & Social Media</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Photo Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="tile">
+        <h2>About Me</h2>
+        <p>Hey there! I’m Mickelle Pagsambugan, 16 years old from General Tinio, Nueva Ecija. I’m really into online games—it’s where I spend most of my free time, whether it’s grinding levels, teaming up with friends, or just having fun. Aside from gaming,
+            I enjoy listening to music, scrolling through social media, and connecting with people who share the same interests. I’m always up for a good conversation, a game invite, or just meeting new friends online. If you’re into gaming or just want
+            to vibe, feel free to reach out!
+        </p>
+    </section>
+
+    <!-- Contact & Social Media Section -->
+    <section id="contact" class="tile hidden">
+        <h2>Contact & Social Media</h2>
+        <p>If you'd like to connect with me, feel free to reach out via email or follow me on social media:</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">Mickellepagsambugan@gmail.com</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/mikkk.pgsmbgn_/?igsh=MTA4NDYwbzJsZGt4bA%3D%3D&utm_source=qr&fbclid=IwZXh0bgNhZW0CMTEAAR49lv3Hp78hYfsA0ScG0-ed6FPeMT7g1BR5n0YVJF0aRReGanzw7Gc6rzFAzg_aem_664aQ4LqRUVyBE2MPvh_2g#">@mikkk.pgsmbgn_</a></li>
+            <li>Facebook: <a href="https://www.facebook.com/share/1E7Zka4QbJ/?mibextid=wwXIfr">@Mickelle Pagsambugan</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile">Mickelle Pagsambugan</a></li>
+        </ul>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="tile hidden">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="490996485_1883260165821119_4033590327998267784_n.jpg" alt="Photo 1"></div>
+            <div class="gallery-item"><img src="490987648_1200679368074640_4746557813115417631_n.jpg" alt="Photo 2"></div>
+            <div class="gallery-item"><img src="490345366_670061945623520_5517019238670909049_n.jpg" alt="Photo 3"></div>
+            <div class="gallery-item"><img src="488956141_1198612978581991_2080666397502892618_n.jpg" alt="Photo 4"></div>
+            <div class="gallery-item"><img src="491027128_1167733095132593_5543743736812239126_n.jpg" alt="Photo 5"></div>
+            <div class="gallery-item"><img src="490984186_698612839178833_8436591929740782392_n.jpg" style="height: 173px; width: 203px;" alt="Photo 6"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mickellepagsambugan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Show the "About Me" section by default
+        showSection('about');
+    </script>
+</body>
+
+</html>
